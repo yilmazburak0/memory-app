@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './MemoryCard.css';
+import { CardsContext } from '../context/cardsContext';
 
-export default function MemoryCard({ card,setSelected,disabled,rotated }) {
+export default function MemoryCard({ card,rotated }) {
+  const {setSelected,disabled} = useContext(CardsContext)
 
   const handleClick = () => {
     if(!disabled) {
